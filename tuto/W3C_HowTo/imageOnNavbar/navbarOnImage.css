@@ -1,0 +1,46 @@
+.bg-nav-img{
+    /*the Image used */
+    background-image:url(sky.JPG);
+    min-height: 200px;
+
+    /* Center and Scale the image nicely */
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:center;
+
+    /* Needed to position the navbar */
+    position:relative;
+}
+
+/* Position the navbar container inside the image */
+.container{
+    position:absolute;
+    margin:20px;
+    width:auto;
+}
+
+/* The navbar */
+.topnav{
+    overflow:hidden;
+    background-color:transparent;
+}
+
+/* Navbar links */
+.topnav a, .topnav a:visited{
+    float:left;
+    color:#333;
+    opacity:1; 
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+    box-sizing: border-box;
+    font-size:17px;
+}
+
+.topnav a:hover{
+    background-color:rgba(255,255,255,0.2);
+    color:black;
+    opacity:0.8;
+    text-shadow: 1px 1px 2px rgba(231, 134, 22, 0.89), 0 0 1em rgba(207, 147, 15, 0.596), 0 0 0.2em rgba(207, 147, 15, 0.596);
+    border-radius: 10px;
+}

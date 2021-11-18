@@ -1,0 +1,49 @@
+<?php
+    /* Contrôleur frontal */
+
+    // Chargement des dépendances
+    require_once "config.php"; // configuration
+
+    // Si on a un fichier de fonctions, on le charge ici.
+
+    // Si on a besoin de se connecter à une base de données, on se connecte ici.
+
+    // Routeur
+
+    include_once "IMPORT/header.php";
+
+    if(!isset($_GET['pg'])){
+        // chargement de l'accueil
+
+        include_once "IMPORT/home.php";
+    }else{
+        switch($_GET['pg']){
+            case "cv":
+                // import du cv
+                include_once "IMPORT/curriculum.php";
+                break;
+            case "tuto":
+                // import de la pages des tutos
+                include_once "IMPORT/tutoriels.php";
+                break;
+            case "photo":
+                //import de la page galerie
+                include_once "IMPORT/galerie.php";
+                break;
+            case "contact":
+                include_once "IMPORT/contact.php";
+                break;
+            case "admin";
+                include_once "IMPORT/admin.php";
+                break;
+            case "lien":
+                include_once "IMPORT/liens.php";
+                break;
+        default:
+                // chargement de la page d'accueil.
+                include_once "IMPORT/home.php";
+        }
+    }
+    
+    include_once "IMPORT/footer.php"
+?>
