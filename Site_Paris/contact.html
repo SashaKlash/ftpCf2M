@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Paris - Accueil</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="global">
+            <header>
+                <h1>Paris</h1>
+            </header>
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="geographie.html">Géographie</a></li>
+                    <li><a href="histoire.html">Histoire</a></li>
+                    <li><a href="culture.html">Culture</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="contact.html">Contacts</a></li>
+                    <li><a href="liens.html">Liens</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h1 class="sousLeMenu">Pour nous contacter</h1>
+                <div class="entete"><img src="images/contacts.jpg" alt="Envellopes dessinées par une main" id="imgContact" class="photoSousMenu"></div>
+                <h3 class="entete">Pour nous laisser un commentaire ou pour obtenir un renseignement complémentaire, remplissez le formulaire ci-dessous :</h3>
+
+                <form id="form1" name="form1" method="post" action="" class="contact">
+                    <div><label for="form1_nom">NOM : </label><input name="nom" type="text" id="form1_nom" size="50"></div>
+                    <div><label for="form1_prenom">PRÉNOM : </label><input name="prenom" type="text" id="form1_prenom" size="50"></div>
+                    <div><label for="form1_ville">VILLE : </label><input name="ville" type="text" id="form1_ville" size="50"></div>
+                    <div><label for="form1_email">E-MAIL : </label><input type="text" name="email" id="form1_email" size="50"></div>
+                    <div><label for="form1_message">COMMENTAIRES : </label><textarea name="message" id="form1_message" cols="40" rows="5"></textarea></div>
+                    <div><input type="submit" name="" id="form1_submit"></div>
+                </form>
+            </main>
+        </div>
+    </body>
+</html>
