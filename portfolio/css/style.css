@@ -64,14 +64,13 @@ h2{
 
 .sectionMenu{
     display:grid;
-    position: sticky;
+    position: relative;
     grid-template-areas:
-        'cartouche cartouche cartouche cartouche cartouche cartouche cartouche '
-        'liens liens liens liens liens liens liens ';
+        '. . . cartouche . . .'
+        'menu menu menu menu menu menu menu ';
     background-image:url("../images/sky.JPG");
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: hidden;
     box-sizing: border-box;
     width:100%;
     height: auto;
@@ -83,37 +82,37 @@ h2{
 
 .cartouche{
     grid-area:cartouche;
-    justify-content: center;
-    text-align: center;
-}
-
-.liensNav{
-    grid-area:liens;
-    color: #07423b;
-    list-style-type: none;
-    position:relative;
-    padding: 1em;
-    flex-wrap: no-wrap;
-    cursor:pointer;
-    text-decoration: none;
-    line-height: 1.5em;
-    font-size: 1.5em;
-    transition:transform 1.5s ease-in;
 }
 
 nav#menu{
+    grid-area:menu;
+    display:grid;
+    grid-template-areas: 'Ac G L T C CV Ad';
+    position:relative;
     background-color: transparent;
     width:100%;
-    min-height: 50px;
     box-sizing: border-box;
-    text-align: center;
-    justify-content: space-evenly;
-    position:sticky;
-    top: 50px;
     z-index: 100;
-    overflow:hidden;
-    border-radius: 25px;
 }
+
+.liensNav{
+    color: #07423b;
+    list-style-type: none;
+    padding: 0 2px;
+    cursor:pointer;
+    text-decoration: none;
+    font-size: 20px;
+    transition:transform 0.5s ease-in, color, top 0.5s;
+    
+}
+
+#lienAcceuil{grid-area:Ac;}
+#lienGalerie{grid-area:G;}
+#lienLiens{grid-area:L;}
+#lienTutoriels{grid-area:T;}
+#lienContact{grid-area:C;}
+#lienCV{grid-area:CV;}
+#lienAdmin{grid-area:Ad;}
 
 /* img#banniere{
     float:left;
@@ -124,25 +123,25 @@ nav#menu{
     z-index:200;
 } */
 
-#menu a:hover{
+.liensNav:hover{
     cursor:pointer;
     opacity:1;
+    color: rgba(255, 255, 255, 0.541);
 }
 
-#menu a:hover::after, #menu a:active::after {
+.lienNav:hover::after {
     content:'\00bb';
     position: absolute;
     opacity: 1;
     top: 16px;
     right:-5px;
-    transition: top 1.5s;
 }
 
 #menu a:visited{
     color: #07423b;
 }
 
-#menu a:active, #menu a:active::after{
+.liensNav:active, .liensNav:active::after{
     top: 6px;
 }
 

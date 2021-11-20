@@ -6,13 +6,12 @@
         </div>
     </div>
     <nav id="menu">
-        <img id="banniere">
-        <a href="./?pg=home" class="liensNav" id="">Accueil</a>
-        <a href="./?pg=galerie" class="liensNav" id="">Galerie</a>
-        <a href="./?pg=liens" class="liensNav" id="">Liens</a>
-        <a href="./?pg=tuto" class="liensNav" id="">Tutoriels</a>
-        <a href="./?pg=contact" class="liensNav" id="">Contact</a>
-        <a href="./?pg=cv" class="liensNav" id="">CV</a>
-        <a href="./?pg=admin" class="liensNav" id="">Admin</a>
+        <a href="./?pg=home" class="liensNav" id="lienAccueil">Accueil</a>
+        <a href="./?pg=galerie" class="liensNav" id="lienGalerie">Galerie</a>
+        <a href="./?pg=liens" class="liensNav" id="lienLiens">Liens</a>
+        <a href="./?pg=tuto" class="liensNav" id="lienTutoriels">Tutoriels</a>
+        <a href="./?pg=contact" class="liensNav" id="lienContact">Contact</a>
+        <a href="./?pg=cv" class="liensNav" id="lienCV">CV</a>
+        <a href="./?pg=admin" class="liensNav" id="lienAdmin">Admin</a>
     </nav>
 </header>
