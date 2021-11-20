@@ -35,7 +35,7 @@ if (isset($_POST["name"]) && isset($_POST["mail"]) && isset($_POST["msg"])) {
         mail($to, $subject, $message, $header);
     } else {
         //Si les variables que l'utilisateur à rentré dans le formulaire sont fausse, alors on affiche une erreur.
-        echo "Votre formulaire est contient des valeurs irrecevables!";
+        echo "Votre formulaire contient des valeurs irrecevables!";
     }
 }
 
@@ -49,6 +49,6 @@ if (isset($_POST["name"]) && isset($_POST["mail"]) && isset($_POST["msg"])) {
         <label for="mail">Mail</label>
         <input type="text" id="mail" placeholder="Votre email" name="mail" required /></br>
         <label for="msg">Message</label>
-        <textarea id="msg" placeholder="Votre message" name="msg" required></textarea></br>
+        <textarea id="msg" placeholder="Votre message" name="msg" col="500" rows="15" required></textarea></br>
         <input type="submit" value="Envoyer">
     </form>

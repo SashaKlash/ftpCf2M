@@ -1,3 +1,13 @@
+:root{
+    /* Coolors Exported Palette - https://coolors.co/ffad33-e7804e-cd1610-fdd422-ff8e37-654b1e */
+    --bright-yellow-crayola: #ffad33ff;
+    --mandarin: #e7804eff;
+    --rosso-corsa: #cd1610ff;
+    --cyber-yellow: #fdd422ff;
+    --princeton-orange: #ff8e37ff;
+    --field-drab: #654b1eff;
+}
+
 @font-face {
     font-family: "Roboto_Mono";
     src: url("./ressourcesEtLiens/Roboto_Mono");
@@ -13,6 +23,8 @@
     /* font-variation-settings: font-variation-settings; */
     /* font-stretch: font-stretch; */
 }
+/* ===================================================== */
+/* Apparence générale */
 
 body{
     background-image:linear-gradient(135deg, #ffad33ff, #e7804eff, #cd1610ff);
@@ -26,7 +38,18 @@ body{
     box-sizing: border-box;
 }
 
-/* Default text styling */
+footer{
+    width:80%;
+    margin: auto;
+}
+
+footer p{
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* Police de caractère par défaut */
 p{
     font-family: "Arial, Helvetica", sans-serif;
     font-size:16px;
@@ -39,101 +62,98 @@ h2{
 
 /* Barre de navigation */
 
-header{
+.sectionMenu{
     display:grid;
-    position:relative;
-    width:90%;
+    position: sticky;
+    grid-template-areas:
+        'cartouche cartouche cartouche cartouche cartouche cartouche cartouche '
+        'liens liens liens liens liens liens liens ';
+    background-image:url("../images/sky.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    box-sizing: border-box;
+    width:100%;
     height: auto;
     border: 5px solid  #09330a;
     padding: 5px;
     margin: 0 auto;
     border-radius:25px;
-    box-sizing: border-box;
-    overflow: hidden;
-    background-image:url("../images/sky.JPG");
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
-nav#menu{
-    width:100%;
-    min-height: 50px;
-    box-sizing: border-box;
-    text-align: center;
+.cartouche{
+    grid-area:cartouche;
     justify-content: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    margin: 0 auto;
-    overflow:hidden;
-    border-radius: 25px;
+    text-align: center;
 }
 
-img#banniere{
-    float:left;
-    background-image: url("../images/logo361x361.png");
-    width:50px;
-    height:auto;
-    background-size: cover;
-    z-index:200;
-}
-
-#menu a{
-    color: #0e6966;
+.liensNav{
+    grid-area:liens;
+    color: #07423b;
     list-style-type: none;
     position:relative;
     padding: 1em;
     flex-wrap: no-wrap;
     cursor:pointer;
     text-decoration: none;
-    transition:0.5s;
     line-height: 1.5em;
     font-size: 1.5em;
+    transition:transform 1.5s ease-in;
 }
+
+nav#menu{
+    background-color: transparent;
+    width:100%;
+    min-height: 50px;
+    box-sizing: border-box;
+    text-align: center;
+    justify-content: space-evenly;
+    position:sticky;
+    top: 50px;
+    z-index: 100;
+    overflow:hidden;
+    border-radius: 25px;
+}
+
+/* img#banniere{
+    float:left;
+    background-image: url("../images/logo361x361.png");
+    width:50px;
+    height:auto;
+    background-size: cover;
+    z-index:200;
+} */
 
 #menu a:hover{
     cursor:pointer;
     opacity:1;
-    transform: translateY(5px);
-    animation-duration:4s;
 }
 
-#menu a:hover::after {
+#menu a:hover::after, #menu a:active::after {
     content:'\00bb';
     position: absolute;
     opacity: 1;
-    top: 6px;
+    top: 16px;
     right:-5px;
-    transition: 1.5s;
+    transition: top 1.5s;
 }
 
 #menu a:visited{
     color: #07423b;
 }
 
-#menu a:active{
-    color:#d64a1f;
-    transform: translateY(4px);
+#menu a:active, #menu a:active::after{
+    top: 6px;
 }
 
-/* Apparence générale */
-footer{
-    width:80%;
-    margin: auto;
-}
 
-footer p{
-    padding: 10px;
-    text-align: center;
-}
 
-div.hero-text h1{
-    color: rgba(107, 10, 6, 0.856);
-    font-size:3em;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+@media screen {
+    
 }
-
+/* ===================================================== */
 /* Page "home.php" */
+
 
 #presentation{
     width: 50%;
@@ -148,6 +168,7 @@ div.hero-text h1{
 .justify-content-center{
     justify-content:center;
 }
+
 
 .hero-image{
     background: url("../images/gareDeBudaBruxelles.JPG") no-repeat center;
@@ -166,21 +187,80 @@ div.hero-text h1{
     color:white;
 }
 
+div.hero-text h1{
+    color: rgba(107, 10, 6, 0.856);
+    font-size:3em;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+/* ===================================================== */
 /* Page "liens.php" */
 
 main.liens{
-    background-image:linear-gradient(135deg, #ffad33ff, #e7804eff, #cd1610ff, #fdd422ff, #ff8e37ff, #654b1eff);
+    display:grid;
+    top:50%;
+    left:50%;
+    grid-template-areas: 
+        'CSS CSS HTML HTML'
+        'CSS CSS HTML HTML'
+        'JS JS image image'
+        'JS JS image image';
+    margin: 0 auto;
 }
 
+.CSS{
+    grid-area:CSS;
+    width: auto;
+}
+
+.HTML{
+    grid-area: HTML;
+}
+
+.JS{
+    grid-area:JS;
+}
+
+.image{
+    grid-area:image;
+}
+
+/* ===================================================== */
 /* Page "tuto" */
-main.tuto{
+main.containerTuto{
+    display:grid;
+    width:100%;
     grid-template-areas:
-        "tuto-galerie1" "tuto-galerie2" "navDroite"
-        "tuto-galerie1" "tuto-galerie2" "navDroite"
-        "tuto-galerie1" "tuto-galerie2" "navDroite";
-    grid-template-columns: 2fr 2fr 1fr;
+        'pTuto pTuto pTuto pTuto'
+        'h2Tuto h2Tuto h2Tuto h2Tuto'
+        'tutoGood tutoGood tutoBad tutoBad'
+        'tutoGood tutoGood tutoBad tutoBad'
+        'choixTuto choixTuto choixTuto choixTuto';
+    grid-gap: 5px;
+    padding: 5px;
+    margin: 5px;
 }
 
+#tutoDescription{
+    grid-area: pTuto;
+}
+
+#titreChoixTuto{
+    grid-area:h2Tuto;
+}
+
+.tutoGood{
+    grid-area:tutoGood;
+}
+
+.tutoBad{
+    grid-area:tutoBad;
+}
+
+.choixTuto{
+    grid-area:choixTuto;
+    width: 100%;
+}
+/* ===================================================== */
 /* Page Galerie */
 
 /* Gallery container */
@@ -193,16 +273,9 @@ main.tuto{
     "gallery-h2 gallery-h2 gallery-h2 gallery-h2"
     "img1 img2 img3 img4"
     "img5 img6 img3 img7";
-}
-
-#index-gallery {
     width:80%;
     height:auto;
     margin: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    cursor:pointer;
 }
 
 #index-gallery a:hover{
@@ -210,9 +283,8 @@ main.tuto{
 }
 
 /* Wrappers */
-
-
 .gallery-img{
+    cursor:pointer;
     width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -261,7 +333,7 @@ main.tuto{
     display:flex;
     justify-content:center;
     align-items:center;
-    transition: box-shadow 0.5s;
+    transition: box-shadow 0.5s, opacity 0.5s;
 }
 
 .gallery-img div:hover{
@@ -276,8 +348,6 @@ main.tuto{
     text-decoration:none;
     text-transform:uppercase;
 }
-
-
 
 /* Popup window when clicked */
 .img-window{
@@ -338,9 +408,8 @@ main.tuto{
     opacity:0.8;
 }
 
+/* ===================================================== */
 /* Section Administration */
-
-
 
 form {border: 3px solid #f1f1f1;}
 
@@ -403,7 +472,7 @@ span.psw {
     }
   }
 
-  /* The Modal (background) */
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -416,46 +485,93 @@ span.psw {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-  }
-  
-  /* Add Animation */
-  @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0; z-index: 300} 
-    to {top:20%; opacity:1; z-index:300}
-  }
-  
-  @keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:20%; opacity:1}
-  }
-  
-  /* The Close Button */
-  .close {
-    color: rgb(141, 37, 37);
-    float: left;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0; z-index: 300} 
+  to {top:20%; opacity:1; z-index:300}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:20%; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #000;
     font-size: 35px;
     font-weight: bold;
+    position: absolute;
+    top:5px;
+    right:15px;
   }
   
-  .close:hover,
-  .close:focus {
-    color: #000;
+.close:hover,
+.close:focus {
+    color: rgb(141, 37, 37);
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+/* ===================================================== */
+/* Contact */
+
+#contactForm {
+    border: 3px solid #f1f1f1;
+    display:flexbox;
+    justify-content: center;
+}
+
+#contactForm input[type=text], #contactForm input[type=password], #contactForm textarea, #contactForm label {
+    display: block;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+#contactForm label {
+    width:120px;
+}
+
+#contactForm input{
+    width:25%;
+}
+
+#contactForm textarea{
+    resize:none;
+    width: 50%;
+    height: minmax(50px, auto);
+}
+
+#contactForm input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: auto;
+}
+
+#contactForm input[type=submit]:hover {
+  opacity: 0.8;
+}
