@@ -38,6 +38,15 @@ body{
     box-sizing: border-box;
 }
 
+#global{
+    width:100%;
+    display:grid;
+    gap:5px;
+    grid-template-areas:
+        'entete'
+        'contenu';
+}
+
 footer{
     width:80%;
     margin: auto;
@@ -62,98 +71,152 @@ h2{
 
 /* Barre de navigation */
 
-.sectionMenu{
+header.entete{
+    grid-area: entete;
     display:grid;
-    position: sticky;
+    position: relative;
     grid-template-areas:
-        'cartouche cartouche cartouche cartouche cartouche cartouche cartouche '
-        'liens liens liens liens liens liens liens ';
+        '. . . cartouche . . .'
+        'menu menu menu menu menu menu menu ';
     background-image:url("../images/sky.JPG");
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: hidden;
+    background-position:center center;
     box-sizing: border-box;
     width:100%;
     height: auto;
     border: 5px solid  #09330a;
-    padding: 5px;
+    padding: 0 5px;
     margin: 0 auto;
     border-radius:25px;
 }
 
 .cartouche{
     grid-area:cartouche;
-    justify-content: center;
-    text-align: center;
+    justify-content:center;
+    text-align:center;
+}
+
+#menu{
+    grid-area:menu;
+    display:grid;
+    grid-template-areas: 'Ac G L T C CV Ad';
+    position:sticky;
+    top:0;
+    background-color:var(--mandarin);
+    width:90%;
+    height: 40px;
+    margin:auto;
+    box-sizing: border-box;
+    z-index: 100;
+    display:none;
+}
+
+.menu_hamburger{
+    color: var(--field-drab);
+    width:250px;
+    height:auto;
+    padding:10px;
+    position:absolute;
+    top:75px;
+    left:-270px;
+    transition: left 500ms ease 0ms;
+}
+
+.menu_hamburger.affiche{
+    left:0;
+    transition: left 1s linear 0s;
+}
+
+.menu_hamburger a{
+    text-decoration: none;
+    color:var(--cyber-yellow);
+    font-size:150%;
 }
 
 .liensNav{
-    grid-area:liens;
+    float:left;
+    display:block;
     color: #07423b;
     list-style-type: none;
-    position:relative;
-    padding: 1em;
-    flex-wrap: no-wrap;
+    padding: 0 2px;
     cursor:pointer;
     text-decoration: none;
-    line-height: 1.5em;
-    font-size: 1.5em;
-    transition:transform 1.5s ease-in;
+    padding: 5px 0;
+    line-height: 40px;
+    height:40px;
+    font-family:"Roboto_Mono", sans-serif;
+    font-size: 20px;
+    text-align:center;
+    transition:transform 0.5s ease-in, color, top 0.5s, border-bottom 0.5s;
+    
 }
 
-nav#menu{
-    background-color: transparent;
-    width:100%;
-    min-height: 50px;
-    box-sizing: border-box;
-    text-align: center;
-    justify-content: space-evenly;
-    position:sticky;
-    top: 50px;
-    z-index: 100;
-    overflow:hidden;
-    border-radius: 25px;
-}
+#lienAcceuil{grid-area:Ac;}
+#lienGalerie{grid-area:G;}
+#lienLiens{grid-area:L;}
+#lienTutoriels{grid-area:T;}
+#lienContact{grid-area:C;}
+#lienCV{grid-area:CV;}
+#lienAdmin{grid-area:Ad;}
 
-/* img#banniere{
-    float:left;
-    background-image: url("../images/logo361x361.png");
-    width:50px;
-    height:auto;
-    background-size: cover;
-    z-index:200;
-} */
-
-#menu a:hover{
+.liensNav:hover{
     cursor:pointer;
     opacity:1;
-}
+    color: rgba(255, 255, 255, 0.541);
+    border-bottom:var(--rosso-corsa);}
 
-#menu a:hover::after, #menu a:active::after {
+.lienNav:hover::after {
     content:'\00bb';
     position: absolute;
     opacity: 1;
     top: 16px;
     right:-5px;
-    transition: top 1.5s;
 }
 
 #menu a:visited{
     color: #07423b;
 }
 
-#menu a:active, #menu a:active::after{
+.liensNav:active, .liensNav:active::after{
     top: 6px;
 }
 
-
-
-@media screen {
-    
+.hamburger {
+    display: block;
+    position:sticky;
+    z-index:10;
+    top: 50px;
+    left:50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 50px;
+    cursor:pointer;
 }
+  
+.hamburger:before,
+.hamburger:after,
+.hamburger div {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 6px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+.hamburger:hover:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.hamburger:hover:after {
+  transform: translateY(-12px) rotate(-135deg);
+}
+.hamburger:hover div {
+  transform: scale(0);
+}
+
 /* ===================================================== */
 /* Page "home.php" */
-
 
 #presentation{
     width: 50%;
@@ -168,7 +231,6 @@ nav#menu{
 .justify-content-center{
     justify-content:center;
 }
-
 
 .hero-image{
     background: url("../images/gareDeBudaBruxelles.JPG") no-repeat center;
@@ -282,7 +344,6 @@ main.containerTuto{
     cursor:cell;
 }
 
-/* Wrappers */
 .gallery-img{
     cursor:pointer;
     width: 100%;
@@ -535,34 +596,37 @@ span.psw {
 /* Contact */
 
 #contactForm {
-    border: 3px solid #f1f1f1;
-    display:flexbox;
-    justify-content: center;
+    width:600px;
+    margin: 0 auto;
+    font-size:20px;
+    box-sizing:border-box;
 }
 
-#contactForm input[type=text], #contactForm input[type=password], #contactForm textarea, #contactForm label {
-    display: block;
-    padding: 12px 20px;
-    margin: 8px 0;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-#contactForm label {
-    width:120px;
+#contactForm label{
+    display:inline-block;
+    height:40px;
+    line-height:40px;
+    width:200px;
+    text-align:right;
 }
 
 #contactForm input{
-    width:25%;
+    height: 40px;
+    width: 400px;
+    margin-bottom:5px;
 }
 
 #contactForm textarea{
     resize:none;
-    width: 50%;
-    height: minmax(50px, auto);
+    width: 400px;
+    height: 80px;
 }
 
-#contactForm input[type=submit] {
+#contactForm label[for="msg"]{
+    float:left;
+}
+
+#contactForm input[type="submit"] {
   background-color: #04AA6D;
   color: white;
   padding: 14px 20px;
@@ -571,7 +635,14 @@ span.psw {
   cursor: pointer;
   width: auto;
 }
+/*
+
+
+
+
+
+
 
 #contactForm input[type=submit]:hover {
   opacity: 0.8;
-}
+} */

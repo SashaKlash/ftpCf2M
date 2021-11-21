@@ -1,5 +1,5 @@
 <h1>Galerie</h1>
-
+    <main>
     <section id="index-gallery" class="wrapper-gallery">
         <h2>Ma Galerie Photo</h2>
         <div class="gallery-img img1">
@@ -24,4 +24,6 @@
             <div><a href="images/img7.JPG">Gand</a></div>
         </div>
     </section>
+</main>
+</div>
     <script src="js/gallery.js"></script>
