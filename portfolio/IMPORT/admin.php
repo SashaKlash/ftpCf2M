@@ -1,3 +1,4 @@
+<main>
 <h1>Section Administration</h1> 
 <!-- ##################################### -->
 
@@ -35,8 +36,7 @@
                 <span class="psw"><a href="#">Mot de passe</a> oublié ?</span>
             </div>
         </form>
-  </div>
+    </div>
 
 </div>
-
-<script src="/portfolio/js/modal.js"></script>
+</main>
